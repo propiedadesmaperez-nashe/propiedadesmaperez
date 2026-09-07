@@ -75,9 +75,9 @@ export function BusinessCard() {
         </div>
 
         <div className="relative mt-6 text-center">
-          <h1 className="font-[family-name:var(--font-sora)] text-[1.65rem] font-bold leading-tight tracking-tight text-white sm:text-[1.85rem]">
+          <p className="font-[family-name:var(--font-sora)] text-[1.65rem] font-bold leading-tight tracking-tight text-white sm:text-[1.85rem]">
             María Angélica Pérez
-          </h1>
+          </p>
           <p className="mt-3 text-[12px] font-semibold uppercase tracking-[0.16em] text-white/90">
             Asesor Hipotecario
           </p>

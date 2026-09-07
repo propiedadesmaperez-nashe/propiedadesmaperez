@@ -105,10 +105,10 @@ export default function HomePage() {
           <p className="animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-forwards text-xs font-semibold uppercase tracking-[0.28em] text-[#d4783a]">
             Propiedades MAPEREZ
           </p>
-          <h2 className="animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-forwards delay-100 mt-4 font-[family-name:var(--font-sora)] text-[2.35rem] font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.25rem]">
+          <h1 className="animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-forwards delay-100 mt-4 font-[family-name:var(--font-sora)] text-[2.35rem] font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.25rem]">
             ¿Quiere su
             <span className="block text-[#9aabba]">casa propia?</span>
-          </h2>
+          </h1>
           <p className="animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-forwards delay-200 mx-auto mt-5 max-w-md text-base leading-relaxed text-white/70 lg:mx-0 sm:text-lg">
             Compra, arriendo, crédito o subsidio. María Angélica Pérez te
             orienta de forma clara y cercana para concretar tu próxima vivienda.

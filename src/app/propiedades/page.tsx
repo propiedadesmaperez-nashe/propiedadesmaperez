@@ -3,6 +3,7 @@ import Link from "next/link";
 import { PropertyShowcase } from "@/components/property-showcase";
 import { SiteHeader } from "@/components/site-header";
 import { WhatsAppFloat } from "@/components/whatsapp-float";
+import { SITE_URL } from "@/lib/site";
 
 const PHONE = "+56977239283";
 const DISPLAY_PHONE = "+56 9 7723 9283";
@@ -28,14 +29,54 @@ const WHATSAPP_DEPTO = wa(
 );
 
 export const metadata: Metadata = {
-  title: "Propiedades disponibles | MAPEREZ",
+  title: "Propiedades en venta y arriendo",
   description:
-    "Casa, departamento y terreno. Revisa propiedades en venta y arriendo con Propiedades MAPEREZ.",
+    "Departamento en Cerrillos, casa y terreno en Talagante. Catálogo de Propiedades MAPEREZ en venta y arriendo.",
+  alternates: {
+    canonical: "/propiedades",
+  },
+  openGraph: {
+    title: "Propiedades en venta y arriendo | MAPEREZ",
+    description:
+      "Departamento en Cerrillos, casa y terreno en Talagante. Consulta por WhatsApp.",
+    url: "/propiedades",
+    images: ["/logo-maperez.png"],
+  },
+  twitter: {
+    card: "summary",
+    title: "Propiedades en venta y arriendo | MAPEREZ",
+    description:
+      "Departamento en Cerrillos, casa y terreno en Talagante. Consulta por WhatsApp.",
+    images: ["/logo-maperez.png"],
+  },
+};
+
+const breadcrumbLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Inicio",
+      item: SITE_URL,
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Propiedades",
+      item: `${SITE_URL}/propiedades`,
+    },
+  ],
 };
 
 export default function PropiedadesPage() {
   return (
     <main className="relative flex-1 overflow-x-hidden pb-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_-5%,rgba(106,125,143,0.22),transparent_55%)]" />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_90%_15%,rgba(196,90,28,0.1),transparent_40%)]" />
       <div
@@ -57,7 +98,7 @@ export default function PropiedadesPage() {
           <span className="text-white/75">Propiedades</span>
         </p>
         <h1 className="mt-4 font-[family-name:var(--font-sora)] text-3xl font-bold tracking-tight text-white sm:text-5xl">
-          Todas las propiedades
+          Propiedades en venta y arriendo
         </h1>
         <p className="mt-3 max-w-2xl text-base text-white/60">
           Explora las opciones disponibles y consulta por WhatsApp.
