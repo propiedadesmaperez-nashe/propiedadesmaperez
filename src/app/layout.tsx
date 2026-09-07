@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     title: "Propiedades MAPEREZ",
     description:
       "María Angélica Pérez — Asesor Hipotecario y Corredora de Propiedades",
-    images: ["/Perfil-MAPEREZ-2-300x300.webp"],
+    images: ["/logo-maperez.png"],
   },
 };
 
@@ -28,11 +28,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="es"
-      className={`${outfit.variable} ${sora.variable} h-full antialiased`}
+      className={`${outfit.variable} ${sora.variable} h-full scroll-smooth antialiased`}
       suppressHydrationWarning
     >
       <body
-        className="min-h-full flex flex-col font-sans"
+        className={`${outfit.className} flex min-h-full flex-col bg-[#12101f] text-[#f2f0eb]`}
         suppressHydrationWarning
       >
         {children}
