@@ -7,7 +7,10 @@ import { Button } from "@/components/ui/button";
 const PHONE = "+56977239283";
 const DISPLAY_PHONE = "+56 9 7723 9283";
 const WHATSAPP =
-  "https://wa.me/56977239283?text=Hola%20Mar%C3%ADa%20Ang%C3%A9lica%2C%20me%20interesa%20conocer%20sus%20servicios%20de%20Propiedades%20MAPEREZ";
+  "https://wa.me/56977239283?text=" +
+  encodeURIComponent(
+    "Hola María Angélica, quiero información sobre propiedades y financiamiento. ¿Me puede orientar?"
+  );
 
 function WhatsAppIcon({ className }: { className?: string }) {
   return (

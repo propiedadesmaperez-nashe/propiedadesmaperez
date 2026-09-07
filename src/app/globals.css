@@ -157,3 +157,17 @@
 .animate-pulse-dot {
   animation: pulse-dot 2s ease-in-out infinite;
 }
+
+@keyframes wa-pulse {
+  0%,
+  100% {
+    box-shadow: 0 12px 40px rgba(37, 211, 102, 0.55);
+  }
+  50% {
+    box-shadow: 0 12px 48px rgba(37, 211, 102, 0.85);
+  }
+}
+
+.animate-wa-pulse {
+  animation: wa-pulse 2.2s ease-in-out infinite;
+}
