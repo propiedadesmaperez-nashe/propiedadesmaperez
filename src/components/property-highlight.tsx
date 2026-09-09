@@ -29,7 +29,7 @@ export function PropertyHighlight({
             Propiedad en evidencia
           </h3>
           <p className="mt-3 text-base text-white/60">
-            Una selección del mes. Revisa el catálogo completo cuando quieras.
+            Una selección del mes. Revise el catálogo completo cuando desee.
           </p>
         </div>
 

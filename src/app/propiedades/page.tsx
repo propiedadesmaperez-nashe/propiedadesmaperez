@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PropertyShowcase } from "@/components/property-showcase";
+import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { WhatsAppFloat } from "@/components/whatsapp-float";
 import { SITE_URL } from "@/lib/site";
 
-const PHONE = "+56977239283";
 const DISPLAY_PHONE = "+56 9 7723 9283";
 
 function wa(text: string) {
@@ -72,7 +72,7 @@ const breadcrumbLd = {
 
 export default function PropiedadesPage() {
   return (
-    <main className="relative flex-1 overflow-x-hidden pb-24">
+    <main className="relative flex-1 overflow-x-hidden">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
@@ -101,7 +101,7 @@ export default function PropiedadesPage() {
           Propiedades en venta y arriendo
         </h1>
         <p className="mt-3 max-w-2xl text-base text-white/60">
-          Explora las opciones disponibles y consulta por WhatsApp.
+          Explora las opciones disponibles y contáctenos.
         </p>
       </div>
 
@@ -112,19 +112,7 @@ export default function PropiedadesPage() {
         showHeader={false}
       />
 
-      <footer className="relative z-10 border-t border-white/[0.08] py-8">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-5 text-center sm:flex-row sm:px-8 sm:text-left">
-          <p className="text-sm font-medium text-white/75">
-            Propiedades y servicios Maperez spa
-          </p>
-          <p className="text-xs text-white/40">
-            © {new Date().getFullYear()} MAPEREZ · Todos los derechos reservados
-          </p>
-          <a href={`tel:${PHONE}`} className="text-sm text-white/60 hover:text-white">
-            {DISPLAY_PHONE}
-          </a>
-        </div>
-      </footer>
+      <SiteFooter whatsappHref={WHATSAPP} />
 
       <WhatsAppFloat href={WHATSAPP} phone={DISPLAY_PHONE} />
     </main>

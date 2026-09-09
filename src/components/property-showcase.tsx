@@ -46,7 +46,16 @@ export type Property = {
   whatsappHref: string;
 };
 
-const TERRENO_ORDER = [16, 5, 12, 15, 4, 1, 10, 9, 7, 6, 2, 3, 8, 11, 13, 14];
+const TERRENO_IMAGES = [
+  {
+    src: "/propiedades/talagante/vista-01.jpg",
+    alt: "Terreno en Talagante Peñaflor junto a avenida principal",
+  },
+  {
+    src: "/propiedades/talagante/vista-02.jpg",
+    alt: "Vista del terreno en Talagante Peñaflor con cerros al fondo",
+  },
+];
 
 const DEPTO_IMAGES = Array.from({ length: 14 }, (_, i) => ({
   src: `/propiedades/depto-cerrillos/foto-${String(i + 1).padStart(2, "0")}.webp`,
@@ -144,10 +153,7 @@ export function buildProperties({
         { icon: Home, label: "Casa sin terminar" },
         { icon: MapPin, label: "Av. principal" },
       ],
-      images: TERRENO_ORDER.map((n) => ({
-        src: `/propiedades/talagante/foto-${String(n).padStart(2, "0")}.jpg`,
-        alt: `Terreno Talagante Peñaflor — foto ${n}`,
-      })),
+      images: TERRENO_IMAGES,
       whatsappHref: terrenoHref,
     },
   ];
@@ -307,7 +313,7 @@ export function PropertyCard({ property }: { property: Property }) {
             rel="noopener noreferrer"
           >
             <WhatsAppIcon className="block size-5 shrink-0" />
-            Consultar esta propiedad
+            Contáctenos
           </a>
         </Button>
       </div>
@@ -345,8 +351,7 @@ export function PropertyShowcase({
               Propiedades disponibles
             </h3>
             <p className="mt-3 text-base text-white/60">
-              Departamento, casa y terreno. Revisa el detalle y consulta por
-              WhatsApp.
+              Departamento, casa y terreno. Revise el detalle y contáctenos.
             </p>
           </div>
         ) : null}

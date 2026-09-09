@@ -8,7 +8,7 @@ export function SiteHeader({
   active = "inicio",
 }: {
   whatsappHref: string;
-  active?: "inicio" | "propiedades";
+  active?: "inicio" | "propiedades" | "nosotros";
 }) {
   return (
     <header className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center gap-4 overflow-visible px-5 py-5 sm:flex-row sm:justify-between sm:px-8 sm:py-6">
@@ -36,13 +36,23 @@ export function SiteHeader({
         >
           Propiedades
         </Link>
+        <Link
+          href="/nosotros"
+          className={`rounded-lg px-3 py-2 text-sm font-semibold transition ${
+            active === "nosotros"
+              ? "text-white"
+              : "text-white/50 hover:text-white"
+          }`}
+        >
+          Nosotros
+        </Link>
         <Button
           asChild
           className="h-10 gap-2 rounded-lg bg-[#1f9a52] px-3 text-sm font-semibold text-white hover:bg-[#188a48] sm:px-4"
         >
           <a href={whatsappHref} target="_blank" rel="noopener noreferrer">
             <WhatsAppIcon className="block size-4 shrink-0" />
-            <span className="hidden sm:inline">WhatsApp</span>
+            <span className="hidden sm:inline">Contáctenos</span>
           </a>
         </Button>
       </nav>

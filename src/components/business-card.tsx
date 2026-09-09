@@ -1,13 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { Phone, Share2, UserPlus } from "lucide-react";
+import { Phone } from "lucide-react";
 import { BrandLogo } from "@/components/brand-logo";
 import { Button } from "@/components/ui/button";
 import { WhatsAppIcon } from "@/components/whatsapp-icon";
 
 const PHONE = "+56977239283";
-const DISPLAY_PHONE = "+56 9 7723 9283";
 const WHATSAPP =
   "https://wa.me/56977239283?text=" +
   encodeURIComponent(
@@ -15,44 +14,6 @@ const WHATSAPP =
   );
 
 export function BusinessCard() {
-  const saveContact = () => {
-    const vcard = [
-      "BEGIN:VCARD",
-      "VERSION:3.0",
-      "N:Pérez;María Angélica;;;",
-      "FN:María Angélica Pérez",
-      "ORG:Propiedades y servicios Maperez spa",
-      "TITLE:Asesor Hipotecario / Corredora de Propiedades",
-      `TEL;TYPE=CELL:${PHONE}`,
-      "URL:https://kromatix.cl/id/maperez/",
-      "END:VCARD",
-    ].join("\n");
-    const blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "Maria-Angelica-Perez-MAPEREZ.vcf";
-    a.click();
-    URL.revokeObjectURL(url);
-  };
-
-  const share = async () => {
-    const data = {
-      title: "Propiedades MAPEREZ",
-      text: `María Angélica Pérez — Asesor Hipotecario y Corredora de Propiedades. ${DISPLAY_PHONE}`,
-      url: typeof window !== "undefined" ? window.location.href : "",
-    };
-    if (navigator.share) {
-      try {
-        await navigator.share(data);
-        return;
-      } catch {
-        return;
-      }
-    }
-    await navigator.clipboard.writeText(`${data.text}\n${data.url}`);
-  };
-
   return (
     <div className="relative mx-auto w-full max-w-[380px]">
       <div className="absolute -inset-1 rounded-[2rem] bg-gradient-to-b from-[#c45a1c]/25 via-[#6a7d8f]/15 to-transparent blur-sm" />
@@ -93,7 +54,7 @@ export function BusinessCard() {
           >
             <a href={`tel:${PHONE}`}>
               <Phone className="size-4" />
-              Llamar
+              Llámenos
             </a>
           </Button>
           <Button
@@ -102,24 +63,8 @@ export function BusinessCard() {
           >
             <a href={WHATSAPP} target="_blank" rel="noopener noreferrer">
               <WhatsAppIcon className="block size-5 shrink-0" />
-              WhatsApp
+              Contáctenos
             </a>
-          </Button>
-          <Button
-            type="button"
-            onClick={saveContact}
-            className="h-12 rounded-xl bg-[#ebe6df] text-[13px] font-semibold text-[#1a1730] shadow-sm transition hover:bg-white"
-          >
-            <UserPlus className="size-4" />
-            Guardar
-          </Button>
-          <Button
-            type="button"
-            onClick={share}
-            className="h-12 rounded-xl bg-[#ebe6df] text-[13px] font-semibold text-[#1a1730] shadow-sm transition hover:bg-white"
-          >
-            <Share2 className="size-4" />
-            Compartir
           </Button>
         </div>
       </article>

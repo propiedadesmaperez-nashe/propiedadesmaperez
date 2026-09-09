@@ -6,7 +6,7 @@ export const site = {
   legalName: "Propiedades y servicios Maperez spa",
   title: "Propiedades MAPEREZ | María Angélica Pérez",
   description:
-    "Corredora de propiedades y asesoría hipotecaria en Chile. Compra, venta, arriendo, crédito mutuo y subsidio leasing habitacional con María Angélica Pérez.",
+    "Corredora de propiedades y asesoría hipotecaria en Chile. Compra, ventas y arriendos, crédito mutuo y subsidio leasing habitacional con María Angélica Pérez.",
   person: "María Angélica Pérez",
   role: "Asesor Hipotecario y Corredora de Propiedades",
   phone: "+56977239283",

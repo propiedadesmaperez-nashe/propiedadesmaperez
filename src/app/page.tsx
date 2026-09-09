@@ -1,15 +1,17 @@
-import Link from "next/link";
 import {
   Building2,
   CircleHelp,
   Handshake,
   Home,
   KeyRound,
+  LandPlot,
+  Phone,
 } from "lucide-react";
 import { BrandLogo } from "@/components/brand-logo";
 import { Button } from "@/components/ui/button";
 import { BusinessCard } from "@/components/business-card";
 import { PropertyHighlight } from "@/components/property-highlight";
+import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { WhatsAppFloat } from "@/components/whatsapp-float";
 import { WhatsAppIcon } from "@/components/whatsapp-icon";
@@ -39,27 +41,27 @@ const WHATSAPP_DEPTO = wa(
 
 const questions = [
   {
-    q: "¿Quiere su casa propia?",
-    a: "Te ayudo a encontrar el camino: crédito, leasing o subsidio.",
-    msg: "Hola María Angélica, quiero mi casa propia. ¿Me puede asesorar?",
+    q: "¿Quiere el sueño de su casa propia?",
+    a: "Lo acompañamos con crédito, leasing o subsidio hasta concretar su vivienda.",
+    msg: "Hola, quiero el sueño de mi casa propia. ¿Me pueden orientar?",
     icon: Home,
   },
   {
-    q: "¿Necesita una casa?",
-    a: "Opciones reales según tu presupuesto y tu zona ideal.",
-    msg: "Hola María Angélica, necesito una casa. ¿Qué opciones tiene disponibles?",
-    icon: Building2,
+    q: "¿Necesita invertir?",
+    a: "Terrenos y propiedades con potencial. Le presentamos opciones claras para su inversión.",
+    msg: "Hola, necesito invertir. ¿Qué opciones tienen disponibles?",
+    icon: LandPlot,
   },
   {
     q: "¿Necesita un arriendo?",
-    a: "Te conecto con propiedades disponibles y te acompaño en el proceso.",
-    msg: "Hola María Angélica, necesito un arriendo. ¿Me puede ayudar?",
+    a: "Lo conectamos con propiedades disponibles y lo acompañamos en todo el proceso.",
+    msg: "Hola, necesito un arriendo. ¿Me pueden ayudar?",
     icon: KeyRound,
   },
   {
     q: "¿Necesita un subsidio?",
-    a: "Gestiono subsidio leasing habitacional paso a paso contigo.",
-    msg: "Hola María Angélica, necesito un subsidio habitacional. ¿Me orienta?",
+    a: "Gestionamos el subsidio leasing habitacional paso a paso con usted.",
+    msg: "Hola, necesito un subsidio habitacional. ¿Me orientan?",
     icon: Handshake,
   },
 ];
@@ -69,25 +71,25 @@ const services = [
     icon: Handshake,
     title: "Subsidio leasing habitacional",
     description:
-      "Te guío en toda la gestión para acceder a tu vivienda con subsidio.",
+      "Lo guiamos en toda la gestión para acceder a su vivienda con subsidio.",
   },
   {
     icon: KeyRound,
     title: "Crédito mutuo hipotecario",
     description:
-      "Evaluamos juntos tu mejor alternativa para financiar tu casa.",
+      "Evaluamos juntos su mejor alternativa para financiar su casa.",
   },
   {
     icon: Home,
-    title: "Compra, venta y arriendo",
+    title: "Compra, ventas y arriendos",
     description:
-      "Propiedades y servicios Maperez spa a tu lado en cada decisión.",
+      "Propiedades y servicios Maperez spa a su lado en cada decisión.",
   },
 ];
 
 export default function HomePage() {
   return (
-    <main className="relative flex-1 overflow-x-hidden pb-24">
+    <main className="relative flex-1 overflow-x-hidden">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_-5%,rgba(106,125,143,0.22),transparent_55%)]" />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_90%_15%,rgba(196,90,28,0.1),transparent_40%)]" />
       <div
@@ -103,15 +105,16 @@ export default function HomePage() {
       <section className="relative z-10 mx-auto grid w-full max-w-6xl items-center gap-10 px-5 pb-14 pt-4 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-14 lg:pb-20 lg:pt-8">
         <div className="order-2 text-center lg:order-1 lg:text-left">
           <p className="animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-forwards text-xs font-semibold uppercase tracking-[0.28em] text-[#d4783a]">
-            Propiedades MAPEREZ
+            Compra, ventas y arriendos
           </p>
           <h1 className="animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-forwards delay-100 mt-4 font-[family-name:var(--font-sora)] text-[2.35rem] font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.25rem]">
-            ¿Quiere su
-            <span className="block text-[#9aabba]">casa propia?</span>
+            ¿Quiere el sueño de
+            <span className="block text-[#9aabba]">su casa propia?</span>
           </h1>
           <p className="animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-forwards delay-200 mx-auto mt-5 max-w-md text-base leading-relaxed text-white/70 lg:mx-0 sm:text-lg">
-            Compra, arriendo, crédito o subsidio. María Angélica Pérez te
-            orienta de forma clara y cercana para concretar tu próxima vivienda.
+            El sueño de su casa propia es una realidad hoy. Lo orientamos de
+            forma clara y cercana en compra, ventas, arriendos, crédito o
+            subsidio.
           </p>
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-forwards delay-300 mt-8 flex flex-col items-center gap-3 sm:flex-row lg:justify-start">
             <Button
@@ -120,15 +123,18 @@ export default function HomePage() {
             >
               <a href={WHATSAPP} target="_blank" rel="noopener noreferrer">
                 <WhatsAppIcon className="block size-5 shrink-0" />
-                Escribir al WhatsApp
+                Contáctenos
               </a>
             </Button>
             <Button
               asChild
               variant="outline"
-              className="h-12 w-full rounded-xl border-white/20 bg-white/[0.04] px-6 text-[15px] font-semibold text-white hover:bg-white/10 hover:text-white sm:w-auto"
+              className="h-12 w-full gap-2 rounded-xl border-white/20 bg-white/[0.04] px-6 text-[15px] font-semibold text-white hover:bg-white/10 hover:text-white sm:w-auto"
             >
-              <Link href="/propiedades">Ver propiedades</Link>
+              <a href={`tel:${PHONE}`}>
+                <Phone className="size-4" />
+                Llámenos
+              </a>
             </Button>
           </div>
           <p className="animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-forwards delay-300 mt-4 text-sm text-white/45">
@@ -154,10 +160,10 @@ export default function HomePage() {
           <div className="mx-auto max-w-2xl text-center">
             <CircleHelp className="mx-auto size-7 text-[#d4783a]" />
             <h3 className="mt-4 font-[family-name:var(--font-sora)] text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              ¿En qué te podemos ayudar?
+              ¿En qué lo podemos ayudar?
             </h3>
             <p className="mt-3 text-base text-white/60">
-              Elige tu consulta y escribe ahora. Te respondemos por WhatsApp.
+              Elija su consulta. Contáctenos y le respondemos a la brevedad.
             </p>
           </div>
           <div className="mt-12 grid gap-4 sm:grid-cols-2">
@@ -182,7 +188,7 @@ export default function HomePage() {
                     </p>
                     <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#d4783a]">
                       <WhatsAppIcon className="block size-4 shrink-0" />
-                      Consultar
+                      Contáctenos
                     </span>
                   </div>
                 </div>
@@ -200,10 +206,10 @@ export default function HomePage() {
           <div className="mx-auto max-w-2xl text-center">
             <Building2 className="mx-auto size-7 text-[#d4783a]" />
             <h3 className="mt-4 font-[family-name:var(--font-sora)] text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Soluciones para tu vivienda
+              Soluciones para su vivienda
             </h3>
             <p className="mt-3 text-base text-white/60">
-              Te acompañamos desde la primera consulta hasta concretar tu meta.
+              Lo acompañamos desde la primera consulta hasta concretar su meta.
             </p>
           </div>
           <div className="mt-14 grid gap-10 md:grid-cols-3 md:gap-8">
@@ -229,11 +235,11 @@ export default function HomePage() {
             <BrandLogo size="lg" />
           </div>
           <h3 className="mt-6 font-[family-name:var(--font-sora)] text-3xl font-bold text-white sm:text-4xl">
-            ¿Todavía tienes dudas?
+            El sueño de su casa propia es una realidad hoy
           </h3>
           <p className="mt-3 text-base text-white/65">
-            Escríbenos y te orientamos sin costo. Casa propia, arriendo o
-            subsidio: estamos para ayudarte.
+            Llámenos. Lo orientamos sin costo en casa propia, arriendo o
+            subsidio.
           </p>
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <Button
@@ -242,29 +248,23 @@ export default function HomePage() {
             >
               <a href={WHATSAPP} target="_blank" rel="noopener noreferrer">
                 <WhatsAppIcon className="block size-5 shrink-0" />
-                WhatsApp {DISPLAY_PHONE}
+                Contáctenos
               </a>
             </Button>
             <Button
               asChild
-              className="h-12 w-full rounded-xl bg-white/95 px-7 text-[15px] font-semibold text-[#1a1730] hover:bg-white sm:w-auto"
+              className="h-12 w-full gap-2 rounded-xl bg-white/95 px-7 text-[15px] font-semibold text-[#1a1730] hover:bg-white sm:w-auto"
             >
-              <a href={`tel:${PHONE}`}>Llamar ahora</a>
+              <a href={`tel:${PHONE}`}>
+                <Phone className="size-4" />
+                Llámenos
+              </a>
             </Button>
           </div>
         </div>
       </section>
 
-      <footer className="relative z-10 border-t border-white/[0.08] py-8">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-5 text-center sm:flex-row sm:px-8 sm:text-left">
-          <p className="text-sm font-medium text-white/75">
-            Propiedades y servicios Maperez spa
-          </p>
-          <p className="text-xs text-white/40">
-            © {new Date().getFullYear()} MAPEREZ · Todos los derechos reservados
-          </p>
-        </div>
-      </footer>
+      <SiteFooter whatsappHref={WHATSAPP} />
 
       <WhatsAppFloat href={WHATSAPP} phone={DISPLAY_PHONE} />
     </main>

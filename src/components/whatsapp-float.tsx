@@ -17,7 +17,7 @@ export function WhatsAppFloat({
     >
       <WhatsAppIcon className="block size-6 shrink-0" />
       <span className="text-[14px] font-semibold leading-none tracking-tight text-white">
-        Escríbenos
+        Contáctenos
       </span>
     </a>
   );
