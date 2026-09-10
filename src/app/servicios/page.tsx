@@ -26,13 +26,28 @@ const WHATSAPP =
 export const metadata: Metadata = {
   title: "Servicios",
   description:
-    "Gestión inmobiliaria, arriendos y ventas, créditos hipotecarios, mutuos y leasing habitacional con Propiedades Maperez SPA.",
+    "Gestión inmobiliaria, arriendos y ventas, créditos hipotecarios, mutuos y leasing habitacional con Propiedades Maperez SPA. Contáctenos.",
+  keywords: [
+    "gestión inmobiliaria Chile",
+    "crédito hipotecario Chile",
+    "leasing habitacional",
+    "mutuo hipotecario",
+    "asesoría en arriendos y ventas",
+  ],
   alternates: { canonical: "/servicios" },
   openGraph: {
+    type: "website",
     title: "Servicios | MAPEREZ",
     description:
       "Soluciones integrales para vivienda, inversión y financiamiento.",
     url: "/servicios",
+    images: ["/logo-maperez.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Servicios | MAPEREZ",
+    description:
+      "Soluciones integrales para vivienda, inversión y financiamiento.",
     images: ["/logo-maperez.png"],
   },
 };

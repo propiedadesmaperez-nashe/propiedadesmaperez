@@ -35,23 +35,39 @@ const WHATSAPP_TORRE = wa(
 export const metadata: Metadata = {
   title: "Propiedades en venta y arriendo",
   description:
-    "Departamentos en Cerrillos y Torre F, casa y terreno en Talagante. Catálogo de Propiedades MAPEREZ en venta y arriendo.",
+    "Departamentos en Cerrillos y Torre F, casa y terreno en Talagante. Catálogo de Propiedades MAPEREZ en venta y arriendo. Contáctenos por WhatsApp.",
+  keywords: [
+    "departamento Cerrillos en venta",
+    "departamento Torre F",
+    "casa Talagante en venta",
+    "terreno Talagante Peñaflor",
+    "propiedades en venta Chile",
+    "propiedades en arriendo Chile",
+  ],
   alternates: {
     canonical: "/propiedades",
   },
   openGraph: {
+    type: "website",
     title: "Propiedades en venta y arriendo | MAPEREZ",
     description:
       "Departamentos en Cerrillos y Torre F, casa y terreno en Talagante. Consulta por WhatsApp.",
     url: "/propiedades",
-    images: ["/logo-maperez.png"],
+    images: [
+      {
+        url: "/propiedades/depto-cerrillos/foto-01.webp",
+        width: 1200,
+        height: 800,
+        alt: "Departamento en Cerrillos — Propiedades MAPEREZ",
+      },
+    ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Propiedades en venta y arriendo | MAPEREZ",
     description:
       "Departamentos en Cerrillos y Torre F, casa y terreno en Talagante. Consulta por WhatsApp.",
-    images: ["/logo-maperez.png"],
+    images: ["/propiedades/depto-cerrillos/foto-01.webp"],
   },
 };
 
@@ -74,12 +90,50 @@ const breadcrumbLd = {
   ],
 };
 
+const listingsLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Propiedades disponibles — MAPEREZ",
+  itemListOrder: "https://schema.org/ItemListOrderAscending",
+  numberOfItems: 4,
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      url: `${SITE_URL}/propiedades#depto-cerrillos`,
+      name: "Departamento en Cerrillos 3D+1B+1E",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      url: `${SITE_URL}/propiedades#depto-torre-f`,
+      name: "Departamento en Torre F",
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      url: `${SITE_URL}/propiedades#casa-talagante`,
+      name: "Casa en Talagante",
+    },
+    {
+      "@type": "ListItem",
+      position: 4,
+      url: `${SITE_URL}/propiedades#terreno-talagante`,
+      name: "Terreno 2.800 m² en Talagante Peñaflor",
+    },
+  ],
+};
+
 export default function PropiedadesPage() {
   return (
     <main className="relative flex-1 overflow-x-hidden">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(listingsLd) }}
       />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_70%_50%_at_50%_-5%,rgba(106,125,143,0.22),transparent_55%)]" />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_90%_15%,rgba(196,90,28,0.1),transparent_40%)]" />

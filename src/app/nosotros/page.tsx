@@ -26,13 +26,26 @@ const WHATSAPP =
 export const metadata: Metadata = {
   title: "Nosotros",
   description:
-    "Conozca Propiedades Maperez SPA: misión, compromiso y por qué elegirnos para su proyecto inmobiliario y financiero.",
+    "Conozca Propiedades Maperez SPA: misión, compromiso y por qué elegirnos para su proyecto inmobiliario y financiero en Chile.",
+  keywords: [
+    "Propiedades Maperez SPA",
+    "María Angélica Pérez corredora",
+    "asesor hipotecario Santiago",
+  ],
   alternates: { canonical: "/nosotros" },
   openGraph: {
+    type: "website",
     title: "Nosotros | MAPEREZ",
     description:
       "Empresa especializada en servicios integrales del sector inmobiliario.",
     url: "/nosotros",
+    images: ["/logo-maperez.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Nosotros | MAPEREZ",
+    description:
+      "Empresa especializada en servicios integrales del sector inmobiliario.",
     images: ["/logo-maperez.png"],
   },
 };

@@ -54,6 +54,12 @@ export const metadata: Metadata = {
     description: site.description,
     images: [
       {
+        url: site.ogImage,
+        width: 1200,
+        height: 630,
+        alt: "Departamento en venta — Propiedades MAPEREZ",
+      },
+      {
         url: site.logo,
         width: 900,
         height: 900,
@@ -62,11 +68,14 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: site.title,
     description: site.description,
-    images: [site.logo],
+    images: [site.ogImage],
   },
+  verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+    ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
+    : undefined,
   appleWebApp: {
     capable: true,
     title: "MAPEREZ",
@@ -105,21 +114,48 @@ const jsonLd = {
       legalName: site.legalName,
       url: SITE_URL,
       logo: absoluteUrl(site.logo),
-      image: absoluteUrl(site.logo),
+      image: absoluteUrl(site.ogImage),
       description: site.description,
       telephone: site.phone,
+      email: site.email,
       priceRange: "$$",
-      areaServed: {
-        "@type": "Country",
-        name: "Chile",
+      address: {
+        "@type": "PostalAddress",
+        addressCountry: "CL",
+        addressLocality: "Santiago",
       },
+      areaServed: [
+        { "@type": "Country", name: "Chile" },
+        { "@type": "AdministrativeArea", name: "Región Metropolitana" },
+        { "@type": "City", name: "Cerrillos" },
+        { "@type": "City", name: "Talagante" },
+        { "@type": "City", name: "Peñaflor" },
+      ],
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          telephone: site.phone,
+          contactType: "customer service",
+          availableLanguage: ["Spanish"],
+          email: site.email,
+        },
+      ],
       employee: {
         "@type": "Person",
         name: site.person,
         jobTitle: site.role,
         telephone: site.phone,
+        email: site.email,
       },
       sameAs: [`https://wa.me/${site.phone.replace("+", "")}`],
+      knowsAbout: [
+        "Compra de propiedades",
+        "Venta de propiedades",
+        "Arriendos",
+        "Crédito hipotecario",
+        "Leasing habitacional",
+        "Subsidio habitacional",
+      ],
     },
   ],
 };
