@@ -10,8 +10,14 @@ export function PropertyHighlight({
   casaHref,
   terrenoHref,
   deptoHref,
+  deptoTorreHref,
 }: PropertyLinks) {
-  const property = buildProperties({ casaHref, terrenoHref, deptoHref })[0];
+  const property = buildProperties({
+    casaHref,
+    terrenoHref,
+    deptoHref,
+    deptoTorreHref,
+  })[0];
   const cover = property.images[0];
 
   return (

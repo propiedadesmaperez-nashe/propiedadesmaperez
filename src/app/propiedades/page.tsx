@@ -28,17 +28,21 @@ const WHATSAPP_DEPTO = wa(
   "Hola María Angélica, me interesa el departamento en Cerrillos (Av. Departamental 4570) a $103.000.000. ¿Me puede dar más información?"
 );
 
+const WHATSAPP_TORRE = wa(
+  "Hola María Angélica, me interesa el departamento en Torre F. ¿Me puede dar más información sobre disponibilidad y valor?"
+);
+
 export const metadata: Metadata = {
   title: "Propiedades en venta y arriendo",
   description:
-    "Departamento en Cerrillos, casa y terreno en Talagante. Catálogo de Propiedades MAPEREZ en venta y arriendo.",
+    "Departamentos en Cerrillos y Torre F, casa y terreno en Talagante. Catálogo de Propiedades MAPEREZ en venta y arriendo.",
   alternates: {
     canonical: "/propiedades",
   },
   openGraph: {
     title: "Propiedades en venta y arriendo | MAPEREZ",
     description:
-      "Departamento en Cerrillos, casa y terreno en Talagante. Consulta por WhatsApp.",
+      "Departamentos en Cerrillos y Torre F, casa y terreno en Talagante. Consulta por WhatsApp.",
     url: "/propiedades",
     images: ["/logo-maperez.png"],
   },
@@ -46,7 +50,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "Propiedades en venta y arriendo | MAPEREZ",
     description:
-      "Departamento en Cerrillos, casa y terreno en Talagante. Consulta por WhatsApp.",
+      "Departamentos en Cerrillos y Torre F, casa y terreno en Talagante. Consulta por WhatsApp.",
     images: ["/logo-maperez.png"],
   },
 };
@@ -109,6 +113,7 @@ export default function PropiedadesPage() {
         terrenoHref={WHATSAPP_TERRENO}
         casaHref={WHATSAPP_CASA}
         deptoHref={WHATSAPP_DEPTO}
+        deptoTorreHref={WHATSAPP_TORRE}
         showHeader={false}
       />
 

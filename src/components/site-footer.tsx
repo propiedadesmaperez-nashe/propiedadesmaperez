@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import { BrandLogo } from "@/components/brand-logo";
 import { WhatsAppIcon } from "@/components/whatsapp-icon";
 import { site } from "@/lib/site";
@@ -21,8 +21,8 @@ export function SiteFooter({
               <BrandLogo size="sm" />
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/55">
-              {site.legalName}. Asesoría hipotecaria, subsidio y corredora de
-              propiedades.
+              {site.legalName}. Gestión inmobiliaria, asesoría y soluciones
+              hipotecarias.
             </p>
           </div>
 
@@ -49,6 +49,14 @@ export function SiteFooter({
               </li>
               <li>
                 <Link
+                  href="/servicios"
+                  className="text-sm text-white/65 transition hover:text-white"
+                >
+                  Servicios
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/nosotros"
                   className="text-sm text-white/65 transition hover:text-white"
                 >
@@ -70,6 +78,15 @@ export function SiteFooter({
                 >
                   <Phone className="size-3.5 shrink-0 text-[#d4783a]" />
                   Llámenos {site.displayPhone}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`mailto:${site.email}`}
+                  className="inline-flex items-center gap-2 text-sm text-white/65 transition hover:text-white"
+                >
+                  <Mail className="size-3.5 shrink-0 text-[#d4783a]" />
+                  {site.email}
                 </a>
               </li>
               <li>

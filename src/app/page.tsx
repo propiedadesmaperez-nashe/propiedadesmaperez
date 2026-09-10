@@ -39,6 +39,10 @@ const WHATSAPP_DEPTO = wa(
   "Hola María Angélica, me interesa el departamento en Cerrillos (Av. Departamental 4570) a $103.000.000. ¿Me puede dar más información?"
 );
 
+const WHATSAPP_TORRE = wa(
+  "Hola María Angélica, me interesa el departamento en Torre F. ¿Me puede dar más información sobre disponibilidad y valor?"
+);
+
 const questions = [
   {
     q: "¿Quiere el sueño de su casa propia?",
@@ -150,6 +154,7 @@ export default function HomePage() {
         terrenoHref={WHATSAPP_TERRENO}
         casaHref={WHATSAPP_CASA}
         deptoHref={WHATSAPP_DEPTO}
+        deptoTorreHref={WHATSAPP_TORRE}
       />
 
       <section

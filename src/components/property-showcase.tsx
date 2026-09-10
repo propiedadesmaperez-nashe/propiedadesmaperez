@@ -48,6 +48,10 @@ export type Property = {
 
 const TERRENO_IMAGES = [
   {
+    src: "/propiedades/talagante/vista-cartel.jpg",
+    alt: "Terreno en Talagante Peñaflor con cartel Se vende Se arrienda",
+  },
+  {
     src: "/propiedades/talagante/vista-01.jpg",
     alt: "Terreno en Talagante Peñaflor junto a avenida principal",
   },
@@ -62,10 +66,22 @@ const DEPTO_IMAGES = Array.from({ length: 14 }, (_, i) => ({
   alt: `Departamento Cerrillos — foto ${i + 1}`,
 }));
 
+const TORRE_F_IMAGES = [
+  { src: "/propiedades/depto-torre-f/foto-01.jpg", alt: "Condominio Torre F con piscina" },
+  { src: "/propiedades/depto-torre-f/foto-02.jpg", alt: "Áreas verdes y piscina del condominio" },
+  { src: "/propiedades/depto-torre-f/foto-03.jpg", alt: "Acceso y pasillos del condominio" },
+  { src: "/propiedades/depto-torre-f/foto-04.jpg", alt: "Pasillo interior hacia las torres" },
+  { src: "/propiedades/depto-torre-f/foto-05.jpg", alt: "Jardines del condominio" },
+  { src: "/propiedades/depto-torre-f/foto-06.jpg", alt: "Vista de jardines y balcones" },
+  { src: "/propiedades/depto-torre-f/foto-07.jpg", alt: "Acceso a Torre F" },
+  { src: "/propiedades/depto-torre-f/foto-08.jpg", alt: "Señalética Torre F" },
+];
+
 export type PropertyLinks = {
   casaHref: string;
   terrenoHref: string;
   deptoHref: string;
+  deptoTorreHref: string;
 };
 
 function typeIcon(type: Property["type"]) {
@@ -78,6 +94,7 @@ export function buildProperties({
   casaHref,
   terrenoHref,
   deptoHref,
+  deptoTorreHref,
 }: PropertyLinks): Property[] {
   return [
     {
@@ -105,6 +122,23 @@ export function buildProperties({
       ],
       images: DEPTO_IMAGES,
       whatsappHref: deptoHref,
+    },
+    {
+      id: "depto-torre-f",
+      type: "Departamento",
+      badges: ["Se vende"],
+      location: "Condominio · Torre F",
+      title: "Departamento en Torre F",
+      description:
+        "Departamento en condominio Torre F. Conjunto cerrado con piscina, áreas verdes y acceso independiente. Contáctenos para conocer disponibilidad, metraje y valor.",
+      features: [
+        { icon: Building2, label: "Torre F" },
+        { icon: Waves, label: "Piscina" },
+        { icon: Shield, label: "Condominio cerrado" },
+        { icon: Sun, label: "Áreas verdes" },
+      ],
+      images: TORRE_F_IMAGES,
+      whatsappHref: deptoTorreHref,
     },
     {
       id: "casa-talagante",
@@ -329,9 +363,15 @@ export function PropertyShowcase({
   terrenoHref,
   casaHref,
   deptoHref,
+  deptoTorreHref,
   showHeader = true,
 }: PropertyShowcaseProps) {
-  const properties = buildProperties({ casaHref, terrenoHref, deptoHref });
+  const properties = buildProperties({
+    casaHref,
+    terrenoHref,
+    deptoHref,
+    deptoTorreHref,
+  });
 
   return (
     <section
@@ -351,7 +391,7 @@ export function PropertyShowcase({
               Propiedades disponibles
             </h3>
             <p className="mt-3 text-base text-white/60">
-              Departamento, casa y terreno. Revise el detalle y contáctenos.
+              Departamentos, casa y terreno. Revise el detalle y contáctenos.
             </p>
           </div>
         ) : null}

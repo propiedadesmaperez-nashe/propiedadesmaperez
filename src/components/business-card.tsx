@@ -17,7 +17,7 @@ export function BusinessCard() {
   return (
     <div className="relative mx-auto w-full max-w-[380px]">
       <div className="absolute -inset-1 rounded-[2rem] bg-gradient-to-b from-[#c45a1c]/25 via-[#6a7d8f]/15 to-transparent blur-sm" />
-      <article className="relative overflow-hidden rounded-[1.85rem] border border-white/15 bg-gradient-to-b from-[#3d4558] via-[#2e3548] to-[#232836] px-6 pb-7 pt-8 shadow-[0_28px_64px_rgba(0,0,0,0.4)] sm:px-7">
+      <article className="relative overflow-hidden rounded-[1.85rem] border border-white/15 bg-gradient-to-b from-[#3d4558] via-[#2e3548] to-[#232836] px-6 pb-7 pt-5 shadow-[0_28px_64px_rgba(0,0,0,0.4)] sm:px-7 sm:pt-6">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(255,255,255,0.12),transparent_55%)]" />
         <div className="pointer-events-none absolute -bottom-6 left-1/2 h-56 w-56 -translate-x-1/2 opacity-[0.1]">
           <Image
@@ -30,9 +30,9 @@ export function BusinessCard() {
           />
         </div>
 
-        <div className="relative mx-auto mt-1 flex w-fit items-center justify-center overflow-visible">
-          <BrandLogo size="md" priority />
-          <span className="absolute right-0 top-0 h-3.5 w-3.5 rounded-full border-2 border-white bg-[#1f9a52] animate-pulse" />
+        <div className="relative mx-auto flex w-fit items-center justify-center overflow-visible">
+          <BrandLogo size="lg" priority />
+          <span className="absolute right-1 top-1 h-3.5 w-3.5 rounded-full border-2 border-white bg-[#1f9a52] animate-pulse" />
         </div>
 
         <div className="relative mt-6 text-center">
